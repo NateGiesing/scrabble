@@ -1,5 +1,20 @@
 class Scrabble
 
+  # attr_reader :word
+
+  # def initialize(word)
+  #   @word = word
+  # end
+  #
+  # def score
+  #   letters = word.downcase.split('')
+  #
+  #   total = 0
+  #   letters.each do |letter|
+  #     total += point_values[letter]
+  #   end
+  #   total
+  # end
   def score(word)
     1
   end
