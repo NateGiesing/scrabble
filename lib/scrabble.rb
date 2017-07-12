@@ -1,3 +1,4 @@
+require "pry"
 class Scrabble
 
   attr_reader :word
@@ -7,7 +8,7 @@ class Scrabble
   end
 
   def score
-    letters = word.downcase.split('')
+    letters = word.split('')
 
     total = 0
     letters.each do |letter|
@@ -23,8 +24,8 @@ class Scrabble
     else
       word.chars do |letter|
         total += point_values[letter.upcase]
-        # require "pry"; binding.pry
       end
+      # binding.pry
     end
     total
   end
@@ -40,4 +41,8 @@ class Scrabble
       "Y"=>4, "Z"=>10
     }
   end
+
+  # def score_multipliers
+  #
+  # end
 end
