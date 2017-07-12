@@ -1,22 +1,32 @@
 class Scrabble
 
-  # attr_reader :word
+  attr_reader :word
 
-  # def initialize(word)
-  #   @word = word
-  # end
-  #
-  # def score
-  #   letters = word.downcase.split('')
-  #
-  #   total = 0
-  #   letters.each do |letter|
-  #     total += point_values[letter]
-  #   end
-  #   total
-  # end
+  def initialize
+    @word = word
+  end
+
+  def score
+    letters = word.downcase.split('')
+
+    total = 0
+    letters.each do |letter|
+      total += point_values[letter]
+    end
+    total
+  end
+
   def score(word)
-    1
+    total = 0
+    if word == nil
+      total = nil
+    else
+      word.chars do |letter|
+        total += point_values[letter.upcase]
+        # require "pry"; binding.pry
+      end
+    end
+    total
   end
 
   def point_values
